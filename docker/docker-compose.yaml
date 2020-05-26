@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres
+    container_name: hackapp-db
+    environment:
+      - POSTGRES_DB=hackapp
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    networks:
+      - webnet
+  web:
+    build:
+      dockerfile: ./docker/Dockerfile
+      context: ../
+    command: hackapp
+    volumes:
+      - ../:/code
+    ports:
+      - 5555:5555
+    depends_on:
+      - db
+    networks:
+      - webnet
+
+networks:
+  webnet:
+
+volumes:
+  postgres_data:

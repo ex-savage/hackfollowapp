@@ -1,0 +1,12 @@
+aiohttp
+lxml
+loguru
+sqlalchemy
+sqla_wrapper
+psycopg2
+apscheduler
+alembic
+
+pytest
+pytest-asyncio
+pytest-aiohttp
