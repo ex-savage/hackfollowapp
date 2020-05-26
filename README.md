@@ -10,7 +10,7 @@ docker-compose run -w /code/hackfollow/model web alembic upgrade head
 docker-compose up -d
 ``` 
 
-Manage configuration with /hackfollow/settings.py
+Manage configuration with [settings.py](hackfollow/settings.py)
 
 #### API
 
@@ -26,7 +26,7 @@ localhost:5555/posts?order=-title&limit=5&offset=10
 ```
 and so on
 
-###$ Local installation
+#### Local installation
 ```shell script
 python -m venv venv
 source venv/bin/activate 
